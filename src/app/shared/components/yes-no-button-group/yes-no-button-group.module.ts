@@ -8,6 +8,9 @@ import { YesNoButtonGroupComponent } from './yes-no-button-group.component';
   declarations: [YesNoButtonGroupComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    YesNoButtonGroupComponent
   ]
 })
 export class YesNoButtonGroupModule { }
