@@ -9,6 +9,7 @@
     {{ label }}
   </label>
   <button
+    [attr.disabled]="disabled ? disabled : null"
     appKeyboardManagedItem
     (focused)="activate(options.YES)"
     role="radio"
@@ -21,6 +22,7 @@
     Yes
   </button>
   <button
+    [attr.disabled]="disabled ? disabled : null"
     appKeyboardManagedItem
     (focused)="activate(options.NO)"
     role="radio"
