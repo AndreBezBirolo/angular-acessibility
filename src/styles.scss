@@ -18,6 +18,9 @@ body {
   text-align: right;
   .button {
     margin-left: 0.5rem;
+    &.disabled {
+      filter: grayscale(100);
+    }
   }
 }
 

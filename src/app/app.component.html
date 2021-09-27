@@ -22,32 +22,36 @@
     </button>
 
     <ng-template #modal>
-      <div class="form-field">
-        <label for="fist-name">First name</label>
-        <input id="fist-name" [(value)]="firstName">
-      </div>
-      <div class="form-field">
-        <label for="sur-name">Sur name</label>
-        <input id="sur-name">
-      </div>
-      <div class="form-field">
-        <label for="age">Age</label>
-        <input id="age">
-      </div>
-      <label for="info">Subscribe too newsletter</label>
-      <input id="info" type="checkbox" (change)="info = !info">
-      <p *ngIf="info">Welcome to our newsletter!</p>
-      <div class="button-group">
-        <button
-          class="button button-primary"
-          type="button">Submit
-        </button>
-        <button
-          class="button button-secondary"
-          type="button"
-          (click)="modalRef.close()">Cancel
-        </button>
-      </div>
+      <form (ngSubmit)="submitModal()" [formGroup]="formModal">
+        <div class="form-field">
+          <label for="fist-name">First name</label>
+          <input formControlName="firstName" id="fist-name">
+        </div>
+        <div class="form-field">
+          <label for="sur-name">Sur name</label>
+          <input formControlName="surname" id="sur-name">
+        </div>
+        <div class="form-field">
+          <label for="age">Age</label>
+          <input formControlName="age" id="age">
+        </div>
+        <label for="info">Subscribe too newsletter</label>
+        <input formControlName="info" id="info" type="checkbox" (change)="info = !info">
+        <p *ngIf="info">Welcome to our newsletter!</p>
+        <div class="button-group">
+          <button
+            [attr.aria-disabled]="formModal.invalid || formModal.pending"
+            [class.disabled]="formModal.invalid || formModal.pending"
+            class="button button-primary"
+            type="submit">Submit
+          </button>
+          <button
+            class="button button-secondary"
+            type="button"
+            (click)="modalRef.close()">Cancel
+          </button>
+        </div>
+      </form>
     </ng-template>
 
   </section>
