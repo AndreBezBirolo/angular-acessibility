@@ -13,6 +13,7 @@ export class AppComponent {
   public title = 'a11y-p1';
   public firstName = 'André';
   public modalRef: ModalRef;
+  public info = false;
   public form: FormGroup = null;
 
   constructor(
