@@ -1,6 +1,7 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ModalRef, ModalService } from './shared/components/modal/services/modal.service';
+import { ModalService } from './shared/components/modal/services/modal.service';
+import { ModalRef } from './shared/components/modal/models/modal-ref';
 
 @Component({
   selector: 'app-root',
@@ -23,12 +24,8 @@ export class AppComponent {
     });
   }
 
-  public submit(): void {
-    console.log(this.form.value);
-  }
-
   public show(): void {
-    this.modalService.open({
+    this.modalRef = this.modalService.open({
       templateRef: this.modalTemplateRef,
       title: 'User Details'
     });
