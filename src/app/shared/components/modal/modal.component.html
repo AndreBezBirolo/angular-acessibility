@@ -3,6 +3,9 @@
   (click)="modalRef.close()"
   class="modal-overlay">
 	<div
+    aria-modal="true"
+    [attr.aria-label]="config.title"
+    role="dialog"
     appFocusTrap
     appFocusBack
     (click)="$event.stopPropagation()"
