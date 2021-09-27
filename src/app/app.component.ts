@@ -32,7 +32,5 @@ export class AppComponent {
       templateRef: this.modalTemplateRef,
       title: 'User Details'
     });
-
-    this.modalRef.close();
   }
 }
