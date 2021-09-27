@@ -2,6 +2,7 @@
   (click)="modalRef.close()"
   class="modal-overlay">
 	<div
+    appFocusTrap
     (click)="$event.stopPropagation()"
     class="modal-content">
     <h1 class="modal-title">{{ config.title }}</h1>
